@@ -10,10 +10,6 @@ function Navbar() {
         <ul>
           <li>Github</li>
           <li>
-            <img
-              className="avatar-sm"
-              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-            />
             <span>Guest</span>
           </li>
         </ul>
