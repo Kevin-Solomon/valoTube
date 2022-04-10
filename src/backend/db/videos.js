@@ -87,7 +87,7 @@ export const videos = [
     releaseDate: '2022-01-01',
   },
   {
-    _id: 'asda3vxdcM',
+    _id: 'asd2342xdcM',
     title: 'Most tilting game of VALORANT',
     imageThumbnail:
       'https://i.ytimg.com/vi/rmZp__7YSqM/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCZk2vHb128yZFpg31Q-TJ5BoNsjA',
@@ -119,7 +119,7 @@ export const videos = [
     releaseDate: '2022-03-05',
   },
   {
-    _id: 'as13dcM',
+    _id: 'asytryr13dcM',
     title: 'WARM UP // Episode 4 Cinematic - VALORANT',
     imageThumbnail:
       'https://i.ytimg.com/vi/OyLHi34Qzv4/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD_o0UtR_TxixONhkBXfhtTJQO4LQ',
@@ -136,7 +136,7 @@ export const videos = [
     releaseDate: '2022-01-10',
   },
   {
-    _id: 'as13dcM',
+    _id: 'as1vcbb3dcM',
     title: 'DIE FOR YOU ft. Grabbitz',
     imageThumbnail:
       'https://i.ytimg.com/vi/h7MYJghRWt0/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAlNMrDMZacjJqQmDsg6-UAP6vS5g',
@@ -153,7 +153,7 @@ export const videos = [
     releaseDate: '2021-11-22',
   },
   {
-    _id: 'as13dcM',
+    _id: 'asads13dcM',
     title:
       '(REBROADCAST) Sentinels vs FNATIC - VCT Masters Reykjavík - Grand Finals',
     imageThumbnail:
@@ -168,6 +168,40 @@ export const videos = [
     category: ['live'],
     channelThumbnail:
       'https://yt3.ggpht.com/bioBUQ4TD7R1jdFVl2R2laXckcH1Tih80lu_wEEvi1mY0R2akwVXTz87BNRfBHOngiaeZvfQK5w=s48-c-k-c0x00ffffff-no-rj',
+    releaseDate: '2021-03-30',
+  },
+  {
+    _id: 'Fqwe343',
+    title:
+      'EPIC GRAND FINAL ! OPTIC VS THE GUARD | VCT 1 NA Challengers Playoffs MARCH 2022',
+    imageThumbnail:
+      'https://i.ytimg.com/vi/Mt9t3XYpfMQ/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDVgYpk0vqDpW_o7XS0M3DeVi_mAw',
+    description:
+      'This Channel Got Demonetized 8 months ago , I have been uploading vods for free staying up day and night ',
+    creator: 'VALORANT VOD',
+    youtubeId: 'Mt9t3XYpfMQ',
+    subscribers: 109000,
+    views: 70000,
+    likes: 918,
+    category: ['live', 'vod'],
+    channelThumbnail:
+      'https://yt3.ggpht.com/BJv8aohVrRKkA-6xeAx-hh8nCJWFLhcZl2QDgR3PfI3nP6hm_aNVljk1mGqXJ_x4bbWM5Auo=s68-c-k-c0x00ffffff-no-rj',
+    releaseDate: '2021-03-28',
+  },
+  {
+    _id: 'zcx445',
+    title: 'SEN TENZ OMEN RANKED VALORANT GAMEPLAY [Full Match VOD]',
+    imageThumbnail:
+      'https://i.ytimg.com/vi/YZjSnf9Q0gE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBWk8N2kD45NzXp8mc15CdRSsE8KQ',
+    description: 'SEN TENZ OMEN RANKED VALORANT GAMEPLAY [Full Match VOD] ',
+    creator: 'VALORANT VOD',
+    youtubeId: 'YZjSnf9Q0gE',
+    subscribers: 23000,
+    views: 10000,
+    likes: 918,
+    category: ['vod'],
+    channelThumbnail:
+      'https://yt3.ggpht.com/ytc/AKedOLTUkG5htPUjX2MfsVIshNMiVt_1dRSMkjwYh6TH=s68-c-k-c0x00ffffff-no-rj',
     releaseDate: '2021-03-30',
   },
 ];

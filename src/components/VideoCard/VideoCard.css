@@ -1,4 +1,33 @@
 .video-card {
   height: 300px;
-  width: 300px;
+  width: 360px;
+}
+.card-title {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.video-card-footer {
+  display: flex;
+  width: 100%;
+  gap: 5px;
+}
+.text-muted {
+  font-size: 0.8rem;
+}
+.video-card-channel {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.video-views::after {
+  content: '•';
+  margin: 0 5px;
+}
+.video-menu {
+  visibility: hidden;
+  margin-left: auto;
+}
+.video-card:hover .video-menu {
+  visibility: visible;
 }
