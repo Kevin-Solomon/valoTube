@@ -9,7 +9,7 @@ import {
   MdVideoLibrary,
 } from 'react-icons/md';
 import { BsThreeDotsVertical } from 'react-icons/bs';
-
+import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineLike, AiOutlineDislike } from 'react-icons/ai';
 
 const getIcons = (type, size) => {
@@ -54,6 +54,12 @@ const getIcons = (type, size) => {
       return (
         <span style={{ fontSize: size }}>
           <BsThreeDotsVertical />
+        </span>
+      );
+    case 'HAMBURGER':
+      return (
+        <span style={{ fontSize: size }}>
+          <GiHamburgerMenu />
         </span>
       );
     default:
