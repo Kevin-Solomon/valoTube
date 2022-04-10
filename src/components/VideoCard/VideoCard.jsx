@@ -28,7 +28,7 @@ function VideoCard({
 
         <div className="video-card-footer">
           <img className="video-card-channel" src={channelThumbnail} />
-          <div>
+          <div className="card-text">
             <div className="card-title">{title}</div>
             <div className="text-muted">{creator}</div>
             <div>

@@ -5,8 +5,13 @@
 .card-title {
   font-weight: bold;
   font-size: 1rem;
+  color: var(--text-light);
 }
-
+.card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
 .video-card-footer {
   display: flex;
   width: 100%;
