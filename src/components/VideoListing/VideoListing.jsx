@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import './VideoListing.css';
 import VideoCard from '../VideoCard/VideoCard';
 function VideoListing({ videos }) {
-  console.log(videos);
   return (
     <div className="video-list">
       {videos.map(

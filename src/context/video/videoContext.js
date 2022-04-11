@@ -12,7 +12,6 @@ const VideoProvider = ({ children }) => {
   useEffect(() => {
     (async () => {
       const videos = await getVideos();
-      console.log(videos);
       videoDispatch({ type: 'INITIAL', payload: videos });
     })();
   }, []);
