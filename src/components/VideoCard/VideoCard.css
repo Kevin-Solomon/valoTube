@@ -7,6 +7,9 @@
   font-size: 1rem;
   color: var(--text-light);
 }
+.video-thumbnail {
+  display: block;
+}
 .card-text {
   display: flex;
   flex-direction: column;
