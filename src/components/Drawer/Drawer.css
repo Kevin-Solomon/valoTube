@@ -1,0 +1,13 @@
+.drawer {
+  width: 6rem;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  color: var(--text-light);
+}
+.drawer-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
