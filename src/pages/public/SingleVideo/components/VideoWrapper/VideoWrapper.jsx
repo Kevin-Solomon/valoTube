@@ -17,7 +17,7 @@ function VideoWrapper({ youtubeId, video }) {
       <div className="video-footer">
         <div>
           <span className="video-views text-muted">
-            {getStringValue(video.views)}
+            {getStringValue(video.views)} views
           </span>
           <span className="text-muted">{video.releaseDate}</span>
         </div>

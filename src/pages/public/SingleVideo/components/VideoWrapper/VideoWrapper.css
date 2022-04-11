@@ -24,7 +24,7 @@
 }
 .video-views::after {
   content: '•';
-  margin: 0 3px;
+  margin: 0 4px;
 }
 .video-decription-footer {
   display: flex;
