@@ -46,7 +46,7 @@ function VideoCard({
 }
 
 export default VideoCard;
-VideoCard.prototype = {
+VideoCard.propTypes = {
   channelThumbnail: propTypes.string,
   creator: propTypes.string,
   description: propTypes.string,
