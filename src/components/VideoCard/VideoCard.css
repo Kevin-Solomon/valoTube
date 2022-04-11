@@ -9,6 +9,7 @@
 }
 .video-thumbnail {
   display: block;
+  margin-bottom: 5px;
 }
 .card-text {
   display: flex;
