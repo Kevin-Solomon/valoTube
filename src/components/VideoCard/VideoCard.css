@@ -40,3 +40,9 @@
 .video-card:hover .video-menu {
   visibility: visible;
 }
+
+@media screen and (max-width: 800px) {
+  .video-menu {
+    visibility: visible;
+  }
+}
