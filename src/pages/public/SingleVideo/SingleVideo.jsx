@@ -8,12 +8,10 @@ import './SingleVideo.css';
 function SingleVideo() {
   const { videoId } = useParams();
   const [video, setVideo] = useState({});
-  console.log(videoId);
   useEffect(() => {
     (async () => {
       const response = await getVideo(videoId);
       setVideo(response);
-      console.log(response);
     })();
   }, []);
   return (

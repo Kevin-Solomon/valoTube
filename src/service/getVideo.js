@@ -8,7 +8,6 @@ async function getVideo(_id) {
       Accept: 'application/json',
     },
   });
-  console.log(response);
   return response.data.video;
 }
 

@@ -5,12 +5,6 @@ import { getStringValue } from './../../../../../util/getStringValue';
 import './VideoWrapper.css';
 function VideoWrapper({ youtubeId, video }) {
   const someRef = useRef();
-  console.log(video);
-  useEffect(() => {
-    window.addEventListener('click', () => {
-      console.log(someRef.current.getCurrentTime());
-    });
-  }, [youtubeId]);
   return (
     <div className="video-wrapper">
       <ReactPlayer
