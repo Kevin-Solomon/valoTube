@@ -5,10 +5,10 @@ import DrawerIcons from './DrawerIcons/DrawerIcons';
 function Drawer() {
   return (
     <aside className="drawer">
-      <DrawerIcons type={'HOME'} size={'25px'} />
-      <DrawerIcons type={'HISTORY'} size={'25px'} />
-      <DrawerIcons type={'LIBRARY'} size={'25px'} />
-      <DrawerIcons type={'WATCH_LATER'} size={'25px'} />
+      <DrawerIcons name="Home" type={'HOME'} size={'25px'} />
+      <DrawerIcons name="History" type={'HISTORY'} size={'25px'} />
+      <DrawerIcons name="Library" type={'LIBRARY'} size={'25px'} />
+      <DrawerIcons name="Watch Later" type={'WATCH_LATER'} size={'25px'} />
     </aside>
   );
 }

@@ -1,0 +1,28 @@
+.video-wrapper {
+  flex-basis: 70%;
+}
+#widget2 {
+  margin: 0;
+}
+.underline {
+  margin: 1rem 0;
+}
+.channel {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+.video-footer {
+  display: flex;
+  font-size: 0.9rem;
+  justify-content: space-between;
+}
+.right-video-footer {
+  display: flex;
+  margin-left: auto;
+  gap: 10px;
+}
+.video-views::after {
+  content: '•';
+  margin: 0 3px;
+}

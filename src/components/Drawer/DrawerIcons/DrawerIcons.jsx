@@ -1,11 +1,11 @@
 import React from 'react';
 import { getIcons } from './../../../util';
-function DrawerIcons({ size, type }) {
+function DrawerIcons({ size, type, name }) {
   return (
     <>
       <div className="drawer-icons">
         {getIcons(type, size)}
-        <div className="text-center">Home</div>
+        <div className="text-center">{name}</div>
       </div>
     </>
   );

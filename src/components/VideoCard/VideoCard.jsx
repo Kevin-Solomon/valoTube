@@ -1,6 +1,7 @@
 import propTypes from 'prop-types';
 import React from 'react';
 import { getIcons, getLastPosted, getStringValue } from '../../util';
+import { useNavigate } from 'react-router-dom';
 import './VideoCard.css';
 function VideoCard({
   channelThumbnail,
@@ -16,9 +17,10 @@ function VideoCard({
   category,
   _id,
 }) {
+  const navigate = useNavigate();
   return (
     <>
-      <div className="video-card">
+      <div className="video-card" onClick={() => navigate(`videos/${_id}`)}>
         <div className="video-thumbnail-wrapper">
           <img
             className="responsive-img video-thumbnail"
