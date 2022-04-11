@@ -26,3 +26,13 @@
   content: '•';
   margin: 0 3px;
 }
+.video-decription-footer {
+  display: flex;
+  gap: 10px;
+}
+.video-creator {
+  margin: 0;
+}
+.video-subscribers {
+  margin: 10px 0;
+}

@@ -34,13 +34,15 @@ function VideoWrapper({ youtubeId, video }) {
         </div>
       </div>
       <div className="underline"></div>
-      <div>
+      <div className="video-decription-footer">
         <div>
           <img className="channel" src={video.channelThumbnail} />
         </div>
         <div>
-          <h4>{video.creator}</h4>
-          <h4>{video.subscribers}</h4>
+          <h4 className="video-creator">{video.creator}</h4>
+          <h4 className="video-subscribers">
+            {getStringValue(video.subscribers)}
+          </h4>
           <p>{video.description}</p>
         </div>
       </div>
