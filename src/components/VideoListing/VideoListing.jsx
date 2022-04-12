@@ -28,6 +28,7 @@ function VideoListing({ videos }) {
               title={title}
               releaseDate={releaseDate}
               views={views}
+              _id={_id}
             />
           );
         }

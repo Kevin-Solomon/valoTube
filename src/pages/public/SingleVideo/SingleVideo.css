@@ -1,0 +1,10 @@
+.container-flex {
+  max-width: 60rem;
+  margin: 1rem auto;
+  gap: 1rem;
+}
+@media screen and (max-width: 800px) {
+  .container-flex {
+    display: block;
+  }
+}

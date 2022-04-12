@@ -62,6 +62,12 @@ const getIcons = (type, size) => {
           <GiHamburgerMenu />
         </span>
       );
+    case 'LIKE':
+      return (
+        <span style={{ fontSize: size }}>
+          <AiOutlineLike />
+        </span>
+      );
     default:
       return new Error('nothing was returned');
   }

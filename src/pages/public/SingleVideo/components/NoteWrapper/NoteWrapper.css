@@ -1,0 +1,14 @@
+.note-wrapper {
+  padding: 10px;
+  flex-grow: 1;
+}
+.notes {
+  width: 100%;
+  resize: none;
+  height: 10rem;
+}
+.btn {
+  margin: 10px 0;
+  padding: 0;
+  min-width: 5rem;
+}
