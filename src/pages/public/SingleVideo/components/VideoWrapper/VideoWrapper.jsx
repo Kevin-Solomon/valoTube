@@ -1,15 +1,13 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import ReactPlayer from 'react-player';
 import { getIcons } from '../../../../../util';
 import { getStringValue } from './../../../../../util/getStringValue';
 import './VideoWrapper.css';
 function VideoWrapper({ youtubeId, video }) {
-  const someRef = useRef();
   return (
     <div className="video-wrapper">
       <ReactPlayer
         width="100%"
-        ref={someRef}
         controls
         url={`https://www.youtube.com/watch?v=${youtubeId}`}
       />
@@ -34,8 +32,8 @@ function VideoWrapper({ youtubeId, video }) {
         </div>
         <div>
           <h4 className="video-creator">{video.creator}</h4>
-          <h4 className="video-subscribers">
-            {getStringValue(video.subscribers)}
+          <h4 className="video-subscribers text-muted">
+            {getStringValue(video.subscribers)} subscribers
           </h4>
           <p>{video.description}</p>
         </div>
