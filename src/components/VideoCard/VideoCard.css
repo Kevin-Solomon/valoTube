@@ -1,6 +1,7 @@
 .video-card {
   height: 300px;
   width: 360px;
+  cursor: pointer;
 }
 .card-title {
   font-weight: bold;

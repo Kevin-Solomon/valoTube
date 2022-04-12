@@ -7,6 +7,7 @@ function VideoWrapper({ youtubeId, video }) {
   return (
     <div className="video-wrapper">
       <ReactPlayer
+        playing
         width="100%"
         controls
         url={`https://www.youtube.com/watch?v=${youtubeId}`}
