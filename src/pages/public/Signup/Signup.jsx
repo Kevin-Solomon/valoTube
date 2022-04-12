@@ -19,7 +19,6 @@ export const Signup = () => {
         user,
         authDispatch
       );
-      console.log(response);
       if (response === 201) {
         navigate('/', { replace: true });
       } else if (response === 422) {

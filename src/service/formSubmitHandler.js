@@ -6,7 +6,6 @@ const formSubmitHandler = async (url, user, authDispatch) => {
       url: url,
       data: user,
     });
-    console.log(response);
     return new Promise(resolve => {
       if (response.status === 200) {
         resolve(response.status);
