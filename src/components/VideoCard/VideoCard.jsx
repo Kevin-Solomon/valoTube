@@ -1,7 +1,10 @@
 import propTypes from 'prop-types';
 import React from 'react';
+import { useAuth } from '../../context/auth/authContext';
 import { getIcons, getLastPosted, getStringValue } from '../../util';
 import { useNavigate } from 'react-router-dom';
+import { useHistory } from '../../context/history/historyContext';
+import { addToHistory } from '../../service';
 import './VideoCard.css';
 function VideoCard({
   channelThumbnail,
@@ -17,10 +20,39 @@ function VideoCard({
   category,
   _id,
 }) {
+  const { authState } = useAuth();
+  const { historyDispatch } = useHistory();
+  const videoClickHandler = async () => {
+    const response = await addToHistory(
+      {
+        channelThumbnail,
+        creator,
+        description,
+        imageThumbnail,
+        likes,
+        releaseDate,
+        subscribers,
+        title,
+        views,
+        youtubeId,
+        category,
+        _id,
+      },
+      authState.token,
+      historyDispatch
+    );
+  };
+
   const navigate = useNavigate();
   return (
     <>
-      <div className="video-card" onClick={() => navigate(`videos/${_id}`)}>
+      <div
+        className="video-card"
+        onClick={() => {
+          videoClickHandler();
+          navigate(`videos/${_id}`);
+        }}
+      >
         <div className="video-thumbnail-wrapper">
           <img
             className="responsive-img video-thumbnail"

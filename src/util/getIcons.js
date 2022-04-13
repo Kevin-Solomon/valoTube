@@ -7,6 +7,7 @@ import {
   MdFilterList,
   MdHome,
   MdVideoLibrary,
+  MdClear,
 } from 'react-icons/md';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -66,6 +67,12 @@ const getIcons = (type, size) => {
       return (
         <span style={{ fontSize: size }}>
           <AiOutlineLike />
+        </span>
+      );
+    case 'CLEAR':
+      return (
+        <span style={{ fontSize: size }}>
+          <MdClear />
         </span>
       );
     default:

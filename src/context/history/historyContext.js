@@ -16,10 +16,10 @@ const HistoryProvider = ({ children }) => {
         url: '/api/user/history',
         headers: { authorization: authState.token },
       });
-      console.log(response);
+      historyDispatch({ type: 'INITIAL', payload: response.data.history });
     };
     getHistory();
-  }, []);
+  }, [authState.token]);
   return (
     <HistoryContext.Provider value={{ historyState, historyDispatch }}>
       {children}

@@ -5,6 +5,7 @@ import Home from './pages/public/Home/Home';
 import { Login } from './pages/public/Login/Login';
 import { Signup } from './pages/public/Signup/Signup';
 import SingleVideo from './pages/public/SingleVideo/SingleVideo';
+import Mockman from 'mockman-js';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/history" element={<History />} />
+      <Route path="/mockman" element={<Mockman />} />
     </Routes>
   );
 }

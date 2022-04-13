@@ -29,6 +29,11 @@ function VideoListing({ videos }) {
               releaseDate={releaseDate}
               views={views}
               _id={_id}
+              description={description}
+              likes={likes}
+              subscribers={subscribers}
+              youtubeId={youtubeId}
+              category={category}
             />
           );
         }

@@ -5,12 +5,13 @@ import Navbar from '../../../components/Navbar/Navbar';
 import VideoListing from '../../../components/VideoListing/VideoListing';
 import HistoryListing from './components/HistoryListing/HistoryListing';
 import { useHistory } from './../../../context/history/historyContext';
+import './History.css';
 function History() {
   const { historyState } = useHistory();
   return (
     <div>
       <Navbar />
-      <article>
+      <article className="history-wrapper">
         <Drawer />
         <HistoryListing />
       </article>
