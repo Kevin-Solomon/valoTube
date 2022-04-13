@@ -1,12 +1,24 @@
 import React from 'react';
 import LandscapeVideoCard from '../../../../../components/LandscapeVideoCard/LandscapeVideoCard';
+import { useAuth } from '../../../../../context/auth/authContext';
 import { useHistory } from '../../../../../context/history/historyContext';
+import { deleteAllFromHistory } from '../../../../../service';
+import { getIcons } from '../../../../../util';
 import './HistoryListing.css';
+
 function HistoryListing() {
-  const { historyState } = useHistory();
-  console.log([...historyState.history].reverse());
+  const { historyState, historyDispatch } = useHistory();
+  const { authState } = useAuth();
   return (
     <div className="history-listing">
+      <article className="search-bar">
+        <p className="search-bar-title">Watch History</p>
+        <span
+          onClick={() => deleteAllFromHistory(authState.token, historyDispatch)}
+        >
+          {getIcons('DELETE', '30px')}
+        </span>
+      </article>
       {[...historyState.history].reverse().map(item => {
         return (
           <LandscapeVideoCard

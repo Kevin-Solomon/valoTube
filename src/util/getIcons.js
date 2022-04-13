@@ -8,6 +8,7 @@ import {
   MdHome,
   MdVideoLibrary,
   MdClear,
+  MdDeleteOutline,
 } from 'react-icons/md';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -73,6 +74,12 @@ const getIcons = (type, size) => {
       return (
         <span style={{ fontSize: size }}>
           <MdClear />
+        </span>
+      );
+    case 'DELETE':
+      return (
+        <span style={{ fontSize: size }}>
+          <MdDeleteOutline />
         </span>
       );
     default:

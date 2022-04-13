@@ -8,6 +8,8 @@ const historyReducer = (state, { type, payload }) => {
       return { history: [...payload] };
     case 'DELETE_FROM_HISTORY':
       return { history: [...payload] };
+    case 'DELETE_ALL':
+      return { history: [...payload] };
     default:
       return new Error('Something went wrong in history reducer');
   }
