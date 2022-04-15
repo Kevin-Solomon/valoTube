@@ -12,7 +12,7 @@ import {
 } from 'react-icons/md';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { AiOutlineLike, AiOutlineDislike } from 'react-icons/ai';
+import { AiOutlineLike, AiOutlineDislike, AiFillLike } from 'react-icons/ai';
 
 const getIcons = (type, size) => {
   const style = { fontSize: size, cursor: 'pointer' };
@@ -69,6 +69,12 @@ const getIcons = (type, size) => {
       return (
         <span style={style}>
           <AiOutlineLike />
+        </span>
+      );
+    case 'LIKE_FILL':
+      return (
+        <span style={style}>
+          <AiFillLike />
         </span>
       );
     case 'CLEAR':

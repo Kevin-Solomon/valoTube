@@ -1,9 +1,18 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
+import { useAuth } from '../../../../../context/auth/authContext';
+import { useLike } from '../../../../../context/likes/likeContext';
+import { addToLike } from '../../../../../service';
 import { getIcons } from '../../../../../util';
 import { getStringValue } from './../../../../../util/getStringValue';
 import './VideoWrapper.css';
+
 function VideoWrapper({ youtubeId, video }) {
+  const { authState } = useAuth();
+  const { likeState, likeDispatch } = useLike();
+
+  const inLikedArray = likeState.likedVideo.map(video => video._id);
+  console.log(inLikedArray.includes(video._id));
   return (
     <div className="video-wrapper">
       <ReactPlayer
@@ -21,7 +30,19 @@ function VideoWrapper({ youtubeId, video }) {
           <span className="text-muted">{video.releaseDate}</span>
         </div>
         <div className="right-video-footer">
-          <div>{getIcons('LIKE', '25px')}</div>
+          <div>
+            {inLikedArray.includes(video._id) ? (
+              <p>{getIcons('LIKE_FILL', '25px')}</p>
+            ) : (
+              <p
+                onClick={() => {
+                  addToLike(authState.token, video, likeDispatch);
+                }}
+              >
+                {getIcons('LIKE', '25px')}
+              </p>
+            )}
+          </div>
           <div>{getIcons('WATCH_LATER', '25px')}</div>
           <div>{getIcons('PLAYLIST_ADD', '28px')}</div>
         </div>

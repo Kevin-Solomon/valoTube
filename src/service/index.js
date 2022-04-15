@@ -5,7 +5,9 @@ import { addToHistory } from './addToHistory';
 import { deleteFromHistory } from './deleteFromHistory';
 import { initialGetLikeVideos } from './initialGetLikeVideos';
 import { deleteAllFromHistory } from './deleteAllFromHistory';
+import { addToLike } from './addToLike';
 export {
+  addToLike,
   initialGetLikeVideos,
   getVideos,
   getVideo,
