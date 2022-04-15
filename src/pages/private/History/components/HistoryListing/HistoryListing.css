@@ -10,7 +10,11 @@
   align-content: center;
   padding: 0 1rem;
   min-width: 15rem;
+  flex-direction: column;
 }
 .search-bar-title {
   margin: 0;
+}
+.delete-icon {
+  text-align: right;
 }

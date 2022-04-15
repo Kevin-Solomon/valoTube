@@ -14,9 +14,24 @@ function HistoryListing() {
       <article className="search-bar">
         <p className="search-bar-title">Watch History</p>
         <span
+          className="delete-icon"
           onClick={() => deleteAllFromHistory(authState.token, historyDispatch)}
         >
-          {getIcons('DELETE', '30px')}
+          {historyState?.history?.length === 0 ? (
+            <>
+              <iframe
+                src="https://giphy.com/embed/3o7aTskHEUdgCQAXde"
+                width="480"
+                height="204"
+                frameBorder="0"
+                class="giphy-embed"
+                allowFullScreen
+              ></iframe>
+              <p>Please watch our videos </p>
+            </>
+          ) : (
+            getIcons('DELETE', '30px')
+          )}
         </span>
       </article>
       {[...historyState.history].reverse().map(item => {

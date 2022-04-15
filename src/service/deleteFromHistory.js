@@ -7,13 +7,12 @@ const deleteFromHistory = async (_id, token, historyDispatch) => {
       url: `/api/user/history/${_id}`,
       headers: { authorization: token },
     });
-    console.log(response);
     historyDispatch({
       type: 'DELETE_FROM_HISTORY',
       payload: response.data.history,
     });
   } catch (err) {
-    console.log(err.response);
+    console.error(err.response);
   }
 };
 export { deleteFromHistory };

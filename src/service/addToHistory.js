@@ -8,7 +8,6 @@ const addToHistory = async (video, token, historyDispatch) => {
       data: { video },
       headers: { authorization: token },
     });
-    console.log(response);
     if (response.status === 201) {
       historyDispatch({
         type: 'ADD_TO_HISTORY',
@@ -16,7 +15,7 @@ const addToHistory = async (video, token, historyDispatch) => {
       });
     }
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
