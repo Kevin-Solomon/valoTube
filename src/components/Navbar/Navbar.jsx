@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -7,12 +8,9 @@ function Navbar() {
         <h2>valoTube</h2>
       </div>
       <div className="right-nav">
-        <ul>
-          <li>Github</li>
-          <li>
-            <span>Guest</span>
-          </li>
-        </ul>
+        <Link to="/login">
+          <button className="primary-btn btn">Login</button>
+        </Link>
       </div>
     </nav>
   );

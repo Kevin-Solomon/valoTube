@@ -1,0 +1,16 @@
+.landscape-video-card {
+  display: flex;
+  max-width: 53rem;
+  gap: 10px;
+}
+.landscape-video-menu {
+  margin-left: auto;
+  display: flex;
+  gap: 20px;
+}
+.video-description {
+  text-align: left;
+}
+.landscape-video-card .video-thumbnail {
+  width: 300px;
+}

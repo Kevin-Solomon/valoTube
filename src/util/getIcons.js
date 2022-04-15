@@ -7,65 +7,80 @@ import {
   MdFilterList,
   MdHome,
   MdVideoLibrary,
+  MdClear,
+  MdDeleteOutline,
 } from 'react-icons/md';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineLike, AiOutlineDislike } from 'react-icons/ai';
 
 const getIcons = (type, size) => {
+  const style = { fontSize: size, cursor: 'pointer' };
   switch (type) {
     case 'HISTORY':
       return (
-        <span style={{ fontSize: size }}>
+        <span style={style}>
           <MdHistory />
         </span>
       );
     case 'WATCH_LATER':
       return (
-        <span style={{ fontSize: size }}>
+        <span style={style}>
           <MdOutlineWatchLater />
         </span>
       );
     case 'PLAYLIST_ADD':
       return (
-        <span style={{ fontSize: size }}>
+        <span style={style}>
           <MdPlaylistAdd />
         </span>
       );
     case 'FILTER':
       return (
-        <span style={{ fontSize: size }}>
+        <span style={style}>
           <MdFilterList />
         </span>
       );
     case 'HOME':
       return (
-        <span style={{ fontSize: size }}>
+        <span style={style}>
           <MdHome />
         </span>
       );
     case 'LIBRARY':
       return (
-        <span style={{ fontSize: size }}>
+        <span style={style}>
           <MdVideoLibrary />
         </span>
       );
     case 'VIDEO_MENU':
       return (
-        <span style={{ fontSize: size }}>
+        <span style={style}>
           <BsThreeDotsVertical />
         </span>
       );
     case 'HAMBURGER':
       return (
-        <span style={{ fontSize: size }}>
+        <span style={style}>
           <GiHamburgerMenu />
         </span>
       );
     case 'LIKE':
       return (
-        <span style={{ fontSize: size }}>
+        <span style={style}>
           <AiOutlineLike />
+        </span>
+      );
+    case 'CLEAR':
+      return (
+        <span style={style}>
+          <MdClear />
+        </span>
+      );
+    case 'DELETE':
+      return (
+        <span style={style}>
+          <MdDeleteOutline />
         </span>
       );
     default:
