@@ -26,7 +26,6 @@ function LandscapeVideoCard({
   const { authState } = useAuth();
   const { historyDispatch } = useHistory();
   const { likeDispatch } = useLike();
-  console.log(inHistory);
   const deleteFromList = () => {
     if (!!inHistory) {
       deleteFromHistory(_id, authState.token, historyDispatch);

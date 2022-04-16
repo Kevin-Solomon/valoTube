@@ -6,7 +6,6 @@ import './LikeWrapper.css';
 import LandscapeVideoCard from '../../../../../components/LandscapeVideoCard/LandscapeVideoCard';
 function LikeWrapper() {
   const { likeState } = useLike();
-  console.log(likeState);
   return (
     <div className="like-wrapper">
       <div className="like-sidebar">

@@ -13,7 +13,6 @@ function VideoWrapper({ youtubeId, video }) {
   const { likeState, likeDispatch } = useLike();
 
   const inLikedArray = likeState.likedVideo.map(video => video._id);
-  console.log(inLikedArray.includes(video._id));
   return (
     <div className="video-wrapper">
       <ReactPlayer
