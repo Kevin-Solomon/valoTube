@@ -37,6 +37,7 @@ function HistoryListing() {
       {[...historyState.history].reverse().map(item => {
         return (
           <LandscapeVideoCard
+            inHistory
             channelThumbnail={item.channelThumbnail}
             creator={item.creator}
             imageThumbnail={item.imageThumbnail}

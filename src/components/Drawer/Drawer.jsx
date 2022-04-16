@@ -22,8 +22,8 @@ function Drawer() {
       >
         <DrawerIcons name="History" type={'HISTORY'} size={'25px'} />
       </NavLink>
-      <NavLink to="/library">
-        <DrawerIcons name="Library" type={'LIBRARY'} size={'25px'} />
+      <NavLink to="/liked">
+        <DrawerIcons name="Liked Videos" type={'LIKE'} size={'25px'} />
       </NavLink>
       <NavLink to="/watch-layer">
         <DrawerIcons name="Watch Later" type={'WATCH_LATER'} size={'25px'} />

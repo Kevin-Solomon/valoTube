@@ -4,6 +4,7 @@ import { useAuth } from '../../../../../context/auth/authContext';
 import { useLike } from '../../../../../context/likes/likeContext';
 import { addToLike } from '../../../../../service';
 import { getIcons } from '../../../../../util';
+import { deleteFromLiked } from './../../../../../service';
 import { getStringValue } from './../../../../../util/getStringValue';
 import './VideoWrapper.css';
 
@@ -32,15 +33,21 @@ function VideoWrapper({ youtubeId, video }) {
         <div className="right-video-footer">
           <div>
             {inLikedArray.includes(video._id) ? (
-              <p>{getIcons('LIKE_FILL', '25px')}</p>
+              <span
+                onClick={() =>
+                  deleteFromLiked(video._id, authState.token, likeDispatch)
+                }
+              >
+                {getIcons('LIKE_FILL', '25px')}
+              </span>
             ) : (
-              <p
+              <span
                 onClick={() => {
                   addToLike(authState.token, video, likeDispatch);
                 }}
               >
                 {getIcons('LIKE', '25px')}
-              </p>
+              </span>
             )}
           </div>
           <div>{getIcons('WATCH_LATER', '25px')}</div>

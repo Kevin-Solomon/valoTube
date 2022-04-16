@@ -41,6 +41,7 @@ function LikeWrapper() {
           likeState.likedVideo.map(video => {
             return (
               <LandscapeVideoCard
+                inLikedVideo
                 channelThumbnail={video.channelThumbnail}
                 creator={video.creator}
                 imageThumbnail={video.imageThumbnail}

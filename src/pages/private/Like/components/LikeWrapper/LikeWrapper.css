@@ -17,3 +17,6 @@
   align-items: center;
   gap: 0.5rem;
 }
+.liked-video {
+  padding: 1rem;
+}

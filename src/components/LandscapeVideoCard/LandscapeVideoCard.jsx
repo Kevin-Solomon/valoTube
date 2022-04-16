@@ -3,7 +3,9 @@ import { useAuth } from '../../context/auth/authContext';
 import { useHistory } from '../../context/history/historyContext';
 import { getIcons } from '../../util';
 import { deleteFromHistory } from '../../service';
+import { deleteFromLiked } from '../../service';
 import './LandscapeVideoCard.css';
+import { useLike } from '../../context/likes/likeContext';
 
 function LandscapeVideoCard({
   channelThumbnail,
@@ -18,9 +20,21 @@ function LandscapeVideoCard({
   youtubeId,
   category,
   _id,
+  inHistory,
+  inLikedVideo,
 }) {
   const { authState } = useAuth();
   const { historyDispatch } = useHistory();
+  const { likeDispatch } = useLike();
+  console.log(inHistory);
+  const deleteFromList = () => {
+    if (!!inHistory) {
+      deleteFromHistory(_id, authState.token, historyDispatch);
+    }
+    if (!!inLikedVideo) {
+      deleteFromLiked(_id, authState.token, likeDispatch);
+    }
+  };
   return (
     <>
       <div className="landscape-video-card">
@@ -43,11 +57,7 @@ function LandscapeVideoCard({
             <p className="video-description text-muted">{description}</p>
           </div>
           <div className="landscape-video-menu">
-            <span
-              onClick={() =>
-                deleteFromHistory(_id, authState.token, historyDispatch)
-              }
-            >
+            <span onClick={() => deleteFromList()}>
               {getIcons('CLEAR', '20px')}
             </span>
             <span>{getIcons('VIDEO_MENU', '20px')}</span>
