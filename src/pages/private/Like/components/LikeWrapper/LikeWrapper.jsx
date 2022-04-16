@@ -17,7 +17,7 @@ function LikeWrapper() {
           </div>
           <div className="text-muted">Last updated today</div>
         </div>
-
+        <div className="underline"></div>
         <div className="like-sidebar-user">
           <img className="avatar" src={defaultUser} />
           <p>user</p>
