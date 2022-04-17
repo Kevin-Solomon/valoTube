@@ -1,0 +1,19 @@
+.watch-later-wrapper {
+  display: flex;
+}
+.watch-later-sidebar {
+  max-width: 20rem;
+  padding: 1rem;
+}
+.watch-sidebar-details {
+  display: flex;
+}
+.video-count::after {
+  content: '•';
+  margin: 0 4px;
+}
+.watch-sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
