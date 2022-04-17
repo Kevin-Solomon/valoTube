@@ -5,12 +5,15 @@ import { getVideo } from '../../../service/getVideo';
 import VideoWrapper from './components/VideoWrapper/VideoWrapper';
 import NoteWrapper from './components/NoteWrapper/NoteWrapper';
 import './SingleVideo.css';
+
 function SingleVideo() {
   const { videoId } = useParams();
   const [video, setVideo] = useState({});
+
   useEffect(() => {
     (async () => {
       const response = await getVideo(videoId);
+
       setVideo(response);
     })();
   }, []);

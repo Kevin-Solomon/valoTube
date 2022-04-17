@@ -1,0 +1,22 @@
+.like-wrapper {
+  display: flex;
+}
+.like-sidebar {
+  max-width: 20rem;
+  padding: 1rem;
+}
+.like-sidebar-details {
+  display: flex;
+}
+.video-count::after {
+  content: '•';
+  margin: 0 4px;
+}
+.like-sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.liked-video {
+  padding: 1rem;
+}
