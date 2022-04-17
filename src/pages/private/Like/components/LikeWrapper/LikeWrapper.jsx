@@ -9,7 +9,11 @@ function LikeWrapper() {
   return (
     <div className="like-wrapper">
       <div className="like-sidebar">
-        <img className="responsive-img" src={valorantThumbnail} />
+        <img
+          alt="playlist-thumbnail"
+          className="responsive-img"
+          src={valorantThumbnail}
+        />
         <h3>Liked Videos</h3>
         <div className="like-sidebar-details">
           <div className="video-count text-muted">
@@ -19,7 +23,7 @@ function LikeWrapper() {
         </div>
         <div className="underline"></div>
         <div className="like-sidebar-user">
-          <img className="avatar" src={defaultUser} />
+          <img alt="profile-picture" className="avatar" src={defaultUser} />
           <p>user</p>
         </div>
       </div>

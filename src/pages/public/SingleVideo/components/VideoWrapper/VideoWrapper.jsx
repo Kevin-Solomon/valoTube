@@ -56,7 +56,11 @@ function VideoWrapper({ youtubeId, video }) {
       <div className="underline"></div>
       <div className="video-decription-footer">
         <div>
-          <img className="channel" src={video.channelThumbnail} />
+          <img
+            alt="channel-thumbnail"
+            className="channel"
+            src={video.channelThumbnail}
+          />
         </div>
         <div>
           <h4 className="video-creator">{video.creator}</h4>

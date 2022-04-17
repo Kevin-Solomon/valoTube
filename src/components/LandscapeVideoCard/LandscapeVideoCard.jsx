@@ -39,13 +39,18 @@ function LandscapeVideoCard({
       <div className="landscape-video-card">
         <div className="video-thumbnail-wrapper">
           <img
+            alt="video-thumbnail"
             className="responsive-img video-thumbnail"
             src={imageThumbnail}
           />
         </div>
 
         <div className="video-card-footer">
-          <img className="video-card-channel" src={channelThumbnail} />
+          <img
+            className="video-card-channel"
+            src={channelThumbnail}
+            alt="channel-thumbnail"
+          />
           <div className="card-text">
             <div className="card-title">{title}</div>
             <div className="text-muted">{creator}</div>
