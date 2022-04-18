@@ -8,6 +8,7 @@ import SingleVideo from './pages/public/SingleVideo/SingleVideo';
 import Mockman from 'mockman-js';
 import Like from './pages/private/Like/Like';
 import WatchLater from './pages/private/WatchLater/WatchLater';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
