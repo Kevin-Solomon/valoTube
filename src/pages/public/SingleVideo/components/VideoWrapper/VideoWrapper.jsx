@@ -1,17 +1,21 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 import { useAuth } from '../../../../../context/auth/authContext';
+import { useWatchLater } from './../../../../../context/watchLater/watchLaterContext';
 import { useLike } from '../../../../../context/likes/likeContext';
 import { addToLike } from '../../../../../service';
 import { getIcons } from '../../../../../util';
 import { deleteFromLiked } from './../../../../../service';
 import { getStringValue } from './../../../../../util/getStringValue';
+import { addToWatchLater } from '../../../../../service';
+import { deleteFromWatchLater } from '../../../../../service';
 import './VideoWrapper.css';
 
 function VideoWrapper({ youtubeId, video }) {
   const { authState } = useAuth();
   const { likeState, likeDispatch } = useLike();
-
+  const { watchLaterState, watchLaterDispatch } = useWatchLater();
+  const inWatchArray = watchLaterState.watchLater.map(video => video._id);
   const inLikedArray = likeState.likedVideo.map(video => video._id);
   return (
     <div className="video-wrapper">
@@ -49,7 +53,30 @@ function VideoWrapper({ youtubeId, video }) {
               </span>
             )}
           </div>
-          <div>{getIcons('WATCH_LATER', '25px')}</div>
+          <div>
+            {inWatchArray.includes(video._id) ? (
+              <span
+                onClick={() => {
+                  deleteFromWatchLater(
+                    video._id,
+                    authState.token,
+                    watchLaterDispatch
+                  );
+                }}
+              >
+                {getIcons('WATCH_LATER_FILL', '25px')}
+              </span>
+            ) : (
+              <span
+                onClick={() => {
+                  addToWatchLater(video, authState.token, watchLaterDispatch);
+                }}
+              >
+                {getIcons('WATCH_LATER', '25px')}
+              </span>
+            )}
+          </div>
+
           <div>{getIcons('PLAYLIST_ADD', '28px')}</div>
         </div>
       </div>

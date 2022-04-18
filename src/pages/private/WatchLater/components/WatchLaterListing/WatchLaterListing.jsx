@@ -1,5 +1,6 @@
 import React from 'react';
 import './WatchLaterListing.css';
+import LandscapeVideoCard from './../../../../../components/LandscapeVideoCard/LandscapeVideoCard';
 import { useWatchLater } from './../../../../../context/watchLater/watchLaterContext';
 import { valorantThumbnail } from './../../../../../assests';
 import { defaultUser } from './../../../../../assests';
@@ -45,7 +46,7 @@ function WatchLaterListing() {
           watchLaterState.watchLater.map(video => {
             return (
               <LandscapeVideoCard
-                inLikedVideo
+                inWatchLater
                 channelThumbnail={video.channelThumbnail}
                 creator={video.creator}
                 imageThumbnail={video.imageThumbnail}

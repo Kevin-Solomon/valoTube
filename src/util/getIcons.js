@@ -9,6 +9,7 @@ import {
   MdVideoLibrary,
   MdClear,
   MdDeleteOutline,
+  MdWatchLater,
 } from 'react-icons/md';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -27,6 +28,12 @@ const getIcons = (type, size) => {
       return (
         <span style={style}>
           <MdOutlineWatchLater />
+        </span>
+      );
+    case 'WATCH_LATER_FILL':
+      return (
+        <span style={style}>
+          <MdWatchLater />
         </span>
       );
     case 'PLAYLIST_ADD':
