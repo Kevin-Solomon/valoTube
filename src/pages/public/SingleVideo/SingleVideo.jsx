@@ -4,6 +4,7 @@ import Navbar from '../../../components/Navbar/Navbar';
 import { getVideo } from '../../../service/getVideo';
 import VideoWrapper from './components/VideoWrapper/VideoWrapper';
 import NoteWrapper from './components/NoteWrapper/NoteWrapper';
+import { ToastContainer } from 'react-toastify';
 import './SingleVideo.css';
 
 function SingleVideo() {
@@ -19,6 +20,18 @@ function SingleVideo() {
   }, []);
   return (
     <>
+      <ToastContainer
+        theme="colored"
+        position="top-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Navbar />
       <section className="container-flex">
         <VideoWrapper video={video} youtubeId={video.youtubeId} />

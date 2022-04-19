@@ -25,7 +25,7 @@ const addToWatchLater = async (video, token, watchLaterDispatch) => {
     }
   } catch (err) {
     if ('response' in err) console.error(err);
-    if (err.response.status) {
+    if (err.response.status === 409) {
       toast.error(`${video.title} already exists in watch later`, {
         position: 'top-right',
         autoClose: true,
