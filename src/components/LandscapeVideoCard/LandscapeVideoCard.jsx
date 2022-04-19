@@ -6,7 +6,8 @@ import { deleteFromHistory } from '../../service';
 import { deleteFromLiked } from '../../service';
 import './LandscapeVideoCard.css';
 import { useLike } from '../../context/likes/likeContext';
-
+import { useWatchLater } from '../../context/watchLater/watchLaterContext';
+import { deleteFromWatchLater } from './../../service';
 function LandscapeVideoCard({
   channelThumbnail,
   creator,
@@ -22,16 +23,21 @@ function LandscapeVideoCard({
   _id,
   inHistory,
   inLikedVideo,
+  inWatchLater,
 }) {
   const { authState } = useAuth();
   const { historyDispatch } = useHistory();
   const { likeDispatch } = useLike();
+  const { watchLaterDispatch } = useWatchLater();
   const deleteFromList = () => {
     if (!!inHistory) {
       deleteFromHistory(_id, authState.token, historyDispatch);
     }
     if (!!inLikedVideo) {
       deleteFromLiked(_id, authState.token, likeDispatch);
+    }
+    if (!!inWatchLater) {
+      deleteFromWatchLater(_id, authState.token, watchLaterDispatch);
     }
   };
   return (

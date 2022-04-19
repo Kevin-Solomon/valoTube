@@ -7,7 +7,13 @@ import { initialGetLikeVideos } from './initialGetLikeVideos';
 import { deleteAllFromHistory } from './deleteAllFromHistory';
 import { addToLike } from './addToLike';
 import { deleteFromLiked } from './deleteFromLiked';
+import { getWatchLater } from './getWatchLater';
+import { addToWatchLater } from './addToWatchLater';
+import { deleteFromWatchLater } from './deleteFromWatchLater';
 export {
+  deleteFromWatchLater,
+  addToWatchLater,
+  getWatchLater,
   addToLike,
   deleteFromLiked,
   initialGetLikeVideos,

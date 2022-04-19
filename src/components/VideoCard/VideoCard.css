@@ -37,6 +37,27 @@
 .video-menu {
   visibility: hidden;
   margin-left: auto;
+  position: relative;
+}
+.menu-options {
+  display: none;
+  position: absolute;
+  width: 11rem;
+  padding: 0 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  background-color: var(--white-color);
+}
+.menu-options > * {
+  display: block;
+  margin: 10px 0;
+}
+.show-menu {
+  display: block;
+}
+.menu-options-item {
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }
 .video-card:hover .video-menu {
   visibility: visible;
