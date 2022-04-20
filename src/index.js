@@ -9,6 +9,7 @@ import { AuthProvider } from './context/auth/authContext';
 import { HistoryProvider } from './context/history/historyContext';
 import { LikeProvider } from './context/likes/likeContext';
 import { WatchLaterProvider } from './context/watchLater/watchLaterContext';
+import { ModalProvider } from './context/modal/modalContext';
 // Call make Server
 makeServer();
 
@@ -19,9 +20,11 @@ ReactDOM.render(
         <HistoryProvider>
           <LikeProvider>
             <WatchLaterProvider>
-              <VideoProvider>
-                <App />
-              </VideoProvider>
+              <ModalProvider>
+                <VideoProvider>
+                  <App />
+                </VideoProvider>
+              </ModalProvider>
             </WatchLaterProvider>
           </LikeProvider>
         </HistoryProvider>
