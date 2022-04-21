@@ -10,7 +10,15 @@ import { deleteFromLiked } from './deleteFromLiked';
 import { getWatchLater } from './getWatchLater';
 import { addToWatchLater } from './addToWatchLater';
 import { deleteFromWatchLater } from './deleteFromWatchLater';
+import { getPlaylist } from './getPlaylist';
+import { createNewPlaylist } from './createNewPlaylist';
+import { addToPlaylist } from './addToPlaylist';
+import { deleteFromPlaylist } from './deleteFromPlaylist';
 export {
+  deleteFromPlaylist,
+  addToPlaylist,
+  createNewPlaylist,
+  getPlaylist,
   deleteFromWatchLater,
   addToWatchLater,
   getWatchLater,
