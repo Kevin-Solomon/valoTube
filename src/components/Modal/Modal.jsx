@@ -3,11 +3,11 @@ import { useModal } from '../../context/modal/modalContext';
 
 import './Modal.css';
 function Modal() {
-  const { setModalDisplay } = useModal();
+  const { modalContentDispatch } = useModal();
   return (
     <>
       <div
-        onClick={() => setModalDisplay(prev => !prev)}
+        onClick={() => modalContentDispatch({ type: 'CLOSE_MODAL' })}
         style={{ height: document.body.scrollHeight }}
         className="modal-wrapper"
       ></div>

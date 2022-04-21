@@ -10,8 +10,8 @@ import Modal from './../../../components/Modal/Modal';
 
 function Home() {
   const { videoState } = useVideo();
-  const { modalDisplay } = useModal();
-  console.log(modalDisplay);
+  const { modalContent } = useModal();
+  console.log(modalContent);
   return (
     <div>
       <ToastContainer
@@ -31,7 +31,7 @@ function Home() {
         <Drawer />
         <VideoListing videos={videoState.videos} />
       </div>
-      {modalDisplay ? <Modal /> : null}
+      {modalContent.display ? <Modal /> : null}
     </div>
   );
 }

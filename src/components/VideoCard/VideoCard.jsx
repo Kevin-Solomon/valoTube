@@ -63,7 +63,7 @@ function VideoCard({
 
   const navigate = useNavigate();
   const [display, setDisplay] = useState(false);
-  const { setModalDisplay } = useModal();
+  const { modalContentDispatch } = useModal();
   return (
     <>
       <div
@@ -125,7 +125,7 @@ function VideoCard({
                 className="menu-options-item"
                 onClick={e => {
                   e.stopPropagation();
-                  setModalDisplay(prevState => !prevState);
+                  modalContentDispatch({ type: 'SHOW_MODAL', payload: video });
                 }}
               >
                 {getIcons('PLAYLIST_ADD', '20px')}save to playlist
