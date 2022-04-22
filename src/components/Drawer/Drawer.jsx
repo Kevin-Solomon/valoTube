@@ -28,6 +28,9 @@ function Drawer() {
       <NavLink to="/watch-later">
         <DrawerIcons name="Watch Later" type={'WATCH_LATER'} size={'25px'} />
       </NavLink>
+      <NavLink to="/playlist">
+        <DrawerIcons name="Playlist" type={'PLAYLIST_ADD'} size={'25px'} />
+      </NavLink>
     </aside>
   );
 }

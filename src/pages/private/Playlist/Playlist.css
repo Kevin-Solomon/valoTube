@@ -1,0 +1,33 @@
+.playlist-wrapper {
+  display: flex;
+}
+.playlist-card {
+  width: 300px;
+}
+.playlist-thumbnail {
+  position: relative;
+}
+.responsive-img {
+  display: block;
+}
+.img-overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 90px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+.playlist-title {
+  margin: 0;
+  margin: 5px 0;
+}
+.playlist-description {
+  margin: 5px 0;
+  text-align: left;
+}

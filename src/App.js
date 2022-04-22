@@ -9,6 +9,7 @@ import Mockman from 'mockman-js';
 import Like from './pages/private/Like/Like';
 import WatchLater from './pages/private/WatchLater/WatchLater';
 import 'react-toastify/dist/ReactToastify.css';
+import Playlist from './pages/private/Playlist/Playlist';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/history" element={<History />} />
       <Route path="/liked" element={<Like />} />
       <Route path="/watch-later" element={<WatchLater />} />
+      <Route path="/playlist" element={<Playlist />} />
       <Route path="/mockman" element={<Mockman />} />
     </Routes>
   );

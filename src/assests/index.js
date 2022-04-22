@@ -1,3 +1,4 @@
 import valorantThumbnail from './valorant-offwhite-thumbnail.jpg';
 import defaultUser from './default-user.jpg';
-export { valorantThumbnail, defaultUser };
+import yoru from './valorant-yoru.jpg';
+export { valorantThumbnail, defaultUser, yoru };
