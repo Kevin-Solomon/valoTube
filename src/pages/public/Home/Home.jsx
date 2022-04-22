@@ -11,7 +11,6 @@ import Modal from './../../../components/Modal/Modal';
 function Home() {
   const { videoState } = useVideo();
   const { modalContent } = useModal();
-  console.log(modalContent);
   return (
     <div>
       <ToastContainer

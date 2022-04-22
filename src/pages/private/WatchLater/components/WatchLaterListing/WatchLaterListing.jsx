@@ -7,7 +7,6 @@ import { defaultUser } from './../../../../../assests';
 
 function WatchLaterListing() {
   const { watchLaterState } = useWatchLater();
-  console.log(watchLaterState);
   return (
     <div className="watch-later-wrapper">
       <div className="watch-later-sidebar">

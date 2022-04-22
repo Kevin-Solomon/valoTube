@@ -6,7 +6,6 @@ const getPlaylistItems = async (playlistId, token, setVideos) => {
       url: `/api/user/playlists/${playlistId}`,
       headers: { authorization: token },
     });
-    console.log(response);
     setVideos(response.data.playlist.videos);
   } catch (err) {
     console.log('error in get playlist item ', err);

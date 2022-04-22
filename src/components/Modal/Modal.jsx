@@ -17,7 +17,6 @@ function Modal() {
   const [displayInput, setDisplayInput] = useState(false);
   const [playlist, setPlaylist] = useState({ title: '', description: '' });
   const { playlistState, playlistDispatch } = usePlaylist();
-  console.log(playlistState.playlist);
   return (
     <>
       <div
@@ -42,7 +41,6 @@ function Modal() {
                     type="checkbox"
                     checked={checkVideoExists(modalContent.video, playlist)}
                     onChange={e => {
-                      console.log(e.target.checked);
                       if (e.target.checked) {
                         addToPlaylist(
                           playlist._id,

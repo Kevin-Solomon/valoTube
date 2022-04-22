@@ -14,7 +14,6 @@ function Playlist() {
   const {
     authState: { token },
   } = useAuth();
-  console.log(playlistState);
   return (
     <section>
       <Navbar />
@@ -46,7 +45,6 @@ function Playlist() {
                     {item.title}{' '}
                     <span
                       onClick={e => {
-                        console.log('clicked');
                         e.stopPropagation();
                         deletePlaylist(item._id, token, playlistDispatch);
                       }}
