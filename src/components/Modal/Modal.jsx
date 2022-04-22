@@ -7,7 +7,7 @@ import {
   createNewPlaylist,
   deleteFromPlaylist,
 } from '../../service';
-import { checkVideoExists } from '../../util';
+import { checkVideoExists, getIcons } from '../../util';
 import './Modal.css';
 function Modal() {
   const {
@@ -26,45 +26,55 @@ function Modal() {
         className="modal-wrapper"
       ></div>
       <div className="modal-content">
-        <p>Save to.... </p>
+        <p className="modal-title">
+          Save to....{' '}
+          <span onClick={() => modalContentDispatch({ type: 'CLOSE_MODAL' })}>
+            {getIcons('CLEAR', '25px')}
+          </span>
+        </p>
+
+        {playlistState.playlist.length === 0
+          ? 'make new playlist please'
+          : playlistState.playlist.map(playlist => {
+              return (
+                <div>
+                  <input
+                    type="checkbox"
+                    checked={checkVideoExists(modalContent.video, playlist)}
+                    onChange={e => {
+                      console.log(e.target.checked);
+                      if (e.target.checked) {
+                        addToPlaylist(
+                          playlist._id,
+                          token,
+                          modalContent.video,
+                          playlistDispatch
+                        );
+                      } else {
+                        deleteFromPlaylist(
+                          token,
+                          modalContent.video._id,
+                          playlist._id,
+                          playlistDispatch
+                        );
+                      }
+                    }}
+                  />{' '}
+                  <span>{playlist.title}</span>
+                </div>
+              );
+            })}
         <button
-          className="playlist-btn btn"
+          className="playlist-btn btn primary-btn"
           onClick={() => setDisplayInput(prev => !prev)}
         >
           Add playlist
         </button>
-        {playlistState.playlist.map(playlist => {
-          return (
-            <div>
-              <input
-                type="checkbox"
-                checked={checkVideoExists(modalContent.video, playlist)}
-                onChange={e => {
-                  console.log(e.target.checked);
-                  if (e.target.checked) {
-                    addToPlaylist(
-                      playlist._id,
-                      token,
-                      modalContent.video,
-                      playlistDispatch
-                    );
-                  } else {
-                    deleteFromPlaylist(
-                      token,
-                      modalContent.video._id,
-                      playlist._id,
-                      playlistDispatch
-                    );
-                  }
-                }}
-              />{' '}
-              <span>{playlist.title}</span>
-            </div>
-          );
-        })}
         {displayInput && (
           <div className="playlist-footer">
+            <label for="title">Title : </label>
             <input
+              id="title"
               name="title"
               value={playlist.title}
               onChange={e =>
@@ -74,7 +84,9 @@ function Modal() {
                 }))
               }
             />
+            <label for="description">Description</label>
             <input
+              id="description"
               name="description"
               value={playlist.description}
               onChange={e =>
@@ -85,6 +97,7 @@ function Modal() {
               }
             />
             <button
+              className="primary-btn"
               onClick={() => {
                 createNewPlaylist(token, playlist, playlistDispatch);
                 setPlaylist({ title: '', description: '' });
