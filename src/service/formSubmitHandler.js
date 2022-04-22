@@ -7,7 +7,6 @@ const formSubmitHandler = async (url, user, authDispatch) => {
       url: url,
       data: user,
     });
-    console.log(response, 'heyuuuuuuuu');
     return new Promise(resolve => {
       if (response.status === 200) {
         resolve(response.status);
@@ -50,7 +49,28 @@ const formSubmitHandler = async (url, user, authDispatch) => {
         progress: undefined,
       });
     }
-    console.error(err.response);
+    if (err.response.status === 401) {
+      toast.error(`The credentials are invalid`, {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+    if (err.response.status === 404) {
+      toast.error(`The email you entered is not Registered !`, {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
   }
 };
 export { formSubmitHandler };
