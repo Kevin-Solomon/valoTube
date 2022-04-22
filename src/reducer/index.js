@@ -3,7 +3,13 @@ import { authReducer, initialAuthState } from './authReducer';
 import { historyReducer, initialHistoryState } from './historyReducer';
 import { likeReducer, initialLikeState } from './likeReducer';
 import { watchLaterReducer, initialWatchLaterState } from './watchLaterReducer';
+import { modalReducer, initialModalState } from './modalReducer';
+import { playlistReducer, initialPlaylistState } from './playlistReducer';
 export {
+  playlistReducer,
+  initialPlaylistState,
+  modalReducer,
+  initialModalState,
   watchLaterReducer,
   initialWatchLaterState,
   initialVideoState,

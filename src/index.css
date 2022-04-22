@@ -10,6 +10,7 @@ body {
   --background-light: #ffffff;
   --text-light: #000;
   background-color: var(--background-light);
+  overflow-x: hidden;
 }
 .dark {
   --background-light: #000;

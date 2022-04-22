@@ -8,6 +8,7 @@ import { addToHistory } from '../../service';
 import { addToWatchLater } from '../../service';
 import './VideoCard.css';
 import { useWatchLater } from '../../context/watchLater/watchLaterContext';
+import { useModal } from '../../context/modal/modalContext';
 function VideoCard({
   channelThumbnail,
   creator,
@@ -62,6 +63,7 @@ function VideoCard({
 
   const navigate = useNavigate();
   const [display, setDisplay] = useState(false);
+  const { modalContentDispatch } = useModal();
   return (
     <>
       <div
@@ -119,7 +121,13 @@ function VideoCard({
               >
                 {getIcons('WATCH_LATER', '20px')}Add to Watch Later
               </span>
-              <span className="menu-options-item">
+              <span
+                className="menu-options-item"
+                onClick={e => {
+                  e.stopPropagation();
+                  modalContentDispatch({ type: 'SHOW_MODAL', payload: video });
+                }}
+              >
                 {getIcons('PLAYLIST_ADD', '20px')}save to playlist
               </span>
               <span>share</span>
