@@ -15,6 +15,7 @@ function VideoWrapper({ youtubeId, video }) {
   const { authState } = useAuth();
   const { likeState, likeDispatch } = useLike();
   const { watchLaterState, watchLaterDispatch } = useWatchLater();
+  console.log(likeState);
   const inWatchArray = watchLaterState.watchLater.map(video => video._id);
   const inLikedArray = likeState.likedVideo.map(video => video._id);
   return (
@@ -38,7 +39,12 @@ function VideoWrapper({ youtubeId, video }) {
             {inLikedArray.includes(video._id) ? (
               <span
                 onClick={() =>
-                  deleteFromLiked(video._id, authState.token, likeDispatch)
+                  deleteFromLiked(
+                    video._id,
+                    authState.token,
+                    likeDispatch,
+                    video.title
+                  )
                 }
               >
                 {getIcons('LIKE_FILL', '25px')}

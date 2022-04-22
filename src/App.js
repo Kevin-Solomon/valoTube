@@ -11,21 +11,35 @@ import WatchLater from './pages/private/WatchLater/WatchLater';
 import 'react-toastify/dist/ReactToastify.css';
 import Playlist from './pages/private/Playlist/Playlist';
 import SinglePlaylist from './pages/private/SinglePlaylist/SinglePlaylist';
-
+import { ToastContainer } from 'react-toastify';
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/videos/:videoId" element={<SingleVideo />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/history" element={<History />} />
-      <Route path="/liked" element={<Like />} />
-      <Route path="/watch-later" element={<WatchLater />} />
-      <Route path="/playlist" element={<Playlist />} />
-      <Route path="/playlist/:playlistId" element={<SinglePlaylist />} />
-      <Route path="/mockman" element={<Mockman />} />
-    </Routes>
+    <>
+      <ToastContainer
+        theme="colored"
+        position="top-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/videos/:videoId" element={<SingleVideo />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/history" element={<History />} />
+        <Route path="/liked" element={<Like />} />
+        <Route path="/watch-later" element={<WatchLater />} />
+        <Route path="/playlist" element={<Playlist />} />
+        <Route path="/playlist/:playlistId" element={<SinglePlaylist />} />
+        <Route path="/mockman" element={<Mockman />} />
+      </Routes>
+    </>
   );
 }
 
