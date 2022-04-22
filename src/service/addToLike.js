@@ -8,7 +8,6 @@ const addToLike = async (token, video, likeDispatch) => {
       data: { video },
       headers: { authorization: token },
     });
-    console.log(response);
     if (response.status === 201) {
       toast.success(`${video.title} saved to liked videos `, {
         position: 'top-right',

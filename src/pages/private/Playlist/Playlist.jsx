@@ -46,7 +46,12 @@ function Playlist() {
                     <span
                       onClick={e => {
                         e.stopPropagation();
-                        deletePlaylist(item._id, token, playlistDispatch);
+                        deletePlaylist(
+                          item._id,
+                          token,
+                          playlistDispatch,
+                          item.title
+                        );
                       }}
                     >
                       {getIcons('DELETE', '25px')}
