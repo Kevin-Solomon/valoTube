@@ -34,7 +34,7 @@ function LandscapeVideoCard({
   const { playlistDispatch } = usePlaylist();
   const deleteFromList = () => {
     if (!!inHistory) {
-      deleteFromHistory(_id, authState.token, historyDispatch);
+      deleteFromHistory(_id, authState.token, historyDispatch, title);
     }
     if (!!inLikedVideo) {
       deleteFromLiked(_id, authState.token, likeDispatch, title);
