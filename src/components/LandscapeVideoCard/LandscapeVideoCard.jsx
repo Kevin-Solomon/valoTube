@@ -37,7 +37,7 @@ function LandscapeVideoCard({
       deleteFromHistory(_id, authState.token, historyDispatch);
     }
     if (!!inLikedVideo) {
-      deleteFromLiked(_id, authState.token, likeDispatch);
+      deleteFromLiked(_id, authState.token, likeDispatch, title);
     }
     if (!!inWatchLater) {
       deleteFromWatchLater(_id, authState.token, watchLaterDispatch);
