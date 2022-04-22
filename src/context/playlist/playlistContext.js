@@ -13,7 +13,6 @@ const PlaylistProvider = ({ children }) => {
     initialPlaylistState
   );
   useEffect(() => {
-    console.log('in useefect');
     getPlaylist(token);
   }, [token]);
   return (

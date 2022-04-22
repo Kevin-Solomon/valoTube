@@ -15,7 +15,9 @@ import { createNewPlaylist } from './createNewPlaylist';
 import { addToPlaylist } from './addToPlaylist';
 import { deleteFromPlaylist } from './deleteFromPlaylist';
 import { getPlaylistItems } from './getPlaylistItems';
+import { deletePlaylist } from './deletePlaylist';
 export {
+  deletePlaylist,
   getPlaylistItems,
   deleteFromPlaylist,
   addToPlaylist,

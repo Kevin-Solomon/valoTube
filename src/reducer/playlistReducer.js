@@ -5,6 +5,8 @@ const playlistReducer = (state, { type, payload }) => {
       return { playlist: [...payload] };
     case 'ADD_NEW_PLAYLIST':
       return { playlist: [...payload] };
+    case 'DELETE_PLAYLIST':
+      return { playlist: [...payload] };
     case 'ADD_VIDEO_TO_PLAYLIST':
       return {
         playlist: state.playlist.reduce((acc, val) => {

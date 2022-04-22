@@ -26,8 +26,17 @@
 .playlist-title {
   margin: 0;
   margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
 }
 .playlist-description {
   margin: 5px 0;
   text-align: left;
+}
+.playlist {
+  margin: 0 2rem;
+}
+.playlist-list {
+  display: flex;
+  justify-content: center;
 }
