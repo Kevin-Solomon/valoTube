@@ -22,13 +22,28 @@ function Drawer() {
       >
         <DrawerIcons name="History" type={'HISTORY'} size={'25px'} />
       </NavLink>
-      <NavLink to="/liked">
+      <NavLink
+        style={({ isActive }) => {
+          return isActive ? { color: 'var(--primary-color)' } : null;
+        }}
+        to="/liked"
+      >
         <DrawerIcons name="Liked Videos" type={'LIKE'} size={'25px'} />
       </NavLink>
-      <NavLink to="/watch-later">
+      <NavLink
+        style={({ isActive }) => {
+          return isActive ? { color: 'var(--primary-color)' } : null;
+        }}
+        to="/watch-later"
+      >
         <DrawerIcons name="Watch Later" type={'WATCH_LATER'} size={'25px'} />
       </NavLink>
-      <NavLink to="/playlist">
+      <NavLink
+        style={({ isActive }) => {
+          return isActive ? { color: 'var(--primary-color)' } : null;
+        }}
+        to="/playlist"
+      >
         <DrawerIcons name="Playlist" type={'PLAYLIST_ADD'} size={'25px'} />
       </NavLink>
     </aside>

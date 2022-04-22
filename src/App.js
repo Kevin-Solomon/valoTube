@@ -10,6 +10,7 @@ import Like from './pages/private/Like/Like';
 import WatchLater from './pages/private/WatchLater/WatchLater';
 import 'react-toastify/dist/ReactToastify.css';
 import Playlist from './pages/private/Playlist/Playlist';
+import SinglePlaylist from './pages/private/SinglePlaylist/SinglePlaylist';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Route path="/liked" element={<Like />} />
       <Route path="/watch-later" element={<WatchLater />} />
       <Route path="/playlist" element={<Playlist />} />
+      <Route path="/playlist/:playlistId" element={<SinglePlaylist />} />
       <Route path="/mockman" element={<Mockman />} />
     </Routes>
   );

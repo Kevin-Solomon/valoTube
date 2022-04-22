@@ -2,12 +2,13 @@ import React from 'react';
 import { useAuth } from '../../context/auth/authContext';
 import { useHistory } from '../../context/history/historyContext';
 import { getIcons } from '../../util';
-import { deleteFromHistory } from '../../service';
+import { deleteFromHistory, deleteFromPlaylist } from '../../service';
 import { deleteFromLiked } from '../../service';
 import './LandscapeVideoCard.css';
 import { useLike } from '../../context/likes/likeContext';
 import { useWatchLater } from '../../context/watchLater/watchLaterContext';
 import { deleteFromWatchLater } from './../../service';
+import { usePlaylist } from '../../context/playlist/playlistContext';
 function LandscapeVideoCard({
   channelThumbnail,
   creator,
@@ -24,11 +25,13 @@ function LandscapeVideoCard({
   inHistory,
   inLikedVideo,
   inWatchLater,
+  inPlaylist,
 }) {
   const { authState } = useAuth();
   const { historyDispatch } = useHistory();
   const { likeDispatch } = useLike();
   const { watchLaterDispatch } = useWatchLater();
+  const { playlistDispatch } = usePlaylist();
   const deleteFromList = () => {
     if (!!inHistory) {
       deleteFromHistory(_id, authState.token, historyDispatch);
@@ -38,6 +41,9 @@ function LandscapeVideoCard({
     }
     if (!!inWatchLater) {
       deleteFromWatchLater(_id, authState.token, watchLaterDispatch);
+    }
+    if (inPlaylist) {
+      deleteFromPlaylist(authState.token, _id, inPlaylist, playlistDispatch);
     }
   };
   return (

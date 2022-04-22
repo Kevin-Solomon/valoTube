@@ -1,0 +1,8 @@
+.single-playlist-wrapper {
+  display: flex;
+}
+.playlist-video-wrapper {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
