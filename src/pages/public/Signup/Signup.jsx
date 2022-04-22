@@ -21,10 +21,6 @@ export const Signup = () => {
       );
       if (response === 201) {
         navigate('/', { replace: true });
-      } else if (response === 422) {
-        alert('Email already exists');
-      } else {
-        alert('Somethig went wrong in signup handler');
       }
     } catch (err) {
       console.error(err);
