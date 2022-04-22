@@ -1,9 +1,12 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 const deleteFromPlaylist = async (
   token,
   videoId,
   playlistId,
-  playlistDispatch
+  playlistDispatch,
+  playlistTitle,
+  videoTitle
 ) => {
   try {
     const response = await axios({
@@ -11,10 +14,21 @@ const deleteFromPlaylist = async (
       url: `/api/user/playlists/${playlistId}/${videoId}`,
       headers: { authorization: token },
     });
-    playlistDispatch({
-      type: 'DELETE_FROM_PLAYLIST',
-      payload: response.data.playlist,
-    });
+    if (response.status === 200) {
+      toast.error(`${videoTitle} has deleted from ${playlistTitle} `, {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      playlistDispatch({
+        type: 'DELETE_FROM_PLAYLIST',
+        payload: response.data.playlist,
+      });
+    }
   } catch (err) {
     console.log('error in delete from playlist ', err);
   }
