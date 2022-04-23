@@ -24,6 +24,16 @@ const createNewPlaylist = async (token, playlist, playlistDispatch) => {
       });
     }
   } catch (err) {
+    if (err.response.status === 500) {
+      toast.error(`Please Login to use this feature`, {
+        position: 'top-right',
+        autoClose: true,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        progress: undefined,
+      });
+    }
     console.log('error in create new playlist', err);
   }
 };
