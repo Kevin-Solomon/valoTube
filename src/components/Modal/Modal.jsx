@@ -46,14 +46,17 @@ function Modal() {
                           playlist._id,
                           token,
                           modalContent.video,
-                          playlistDispatch
+                          playlistDispatch,
+                          playlist.title
                         );
                       } else {
                         deleteFromPlaylist(
                           token,
                           modalContent.video._id,
                           playlist._id,
-                          playlistDispatch
+                          playlistDispatch,
+                          playlist.title,
+                          modalContent.video.title
                         );
                       }
                     }}

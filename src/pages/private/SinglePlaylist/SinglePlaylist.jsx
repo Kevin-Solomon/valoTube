@@ -39,6 +39,7 @@ function SinglePlaylist() {
                 subscribers={video.subscribers}
                 youtubeId={video.youtubeId}
                 category={video.category}
+                playlistTitle={video.title}
               />
             );
           })}

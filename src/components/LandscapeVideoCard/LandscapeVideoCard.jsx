@@ -26,6 +26,7 @@ function LandscapeVideoCard({
   inLikedVideo,
   inWatchLater,
   inPlaylist,
+  playlistTitle,
 }) {
   const { authState } = useAuth();
   const { historyDispatch } = useHistory();
@@ -34,16 +35,23 @@ function LandscapeVideoCard({
   const { playlistDispatch } = usePlaylist();
   const deleteFromList = () => {
     if (!!inHistory) {
-      deleteFromHistory(_id, authState.token, historyDispatch);
+      deleteFromHistory(_id, authState.token, historyDispatch, title);
     }
     if (!!inLikedVideo) {
-      deleteFromLiked(_id, authState.token, likeDispatch);
+      deleteFromLiked(_id, authState.token, likeDispatch, title);
     }
     if (!!inWatchLater) {
       deleteFromWatchLater(_id, authState.token, watchLaterDispatch);
     }
     if (inPlaylist) {
-      deleteFromPlaylist(authState.token, _id, inPlaylist, playlistDispatch);
+      deleteFromPlaylist(
+        authState.token,
+        _id,
+        inPlaylist,
+        playlistDispatch,
+        title,
+        playlistTitle
+      );
     }
   };
   return (

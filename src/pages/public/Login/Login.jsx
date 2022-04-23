@@ -18,12 +18,6 @@ export const Login = () => {
       );
       if (response === 200) {
         navigate('/', { replace: true });
-      } else if (response === 401) {
-        alert('Credentials are wrong');
-      } else if (response === 404) {
-        alert('You need to sign up, coz you are not registered');
-      } else {
-        alert('Somethig went wrong in login handler');
       }
     } catch (err) {
       console.error(err);
