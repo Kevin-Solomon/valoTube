@@ -38,39 +38,15 @@ const formSubmitHandler = async (url, user, authDispatch) => {
       }
     });
   } catch (err) {
-    if (err.response.status === 422) {
-      toast.error(`Email Already exist !`, {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
-    }
-    if (err.response.status === 401) {
-      toast.error(`The credentials are invalid`, {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
-    }
-    if (err.response.status === 404) {
-      toast.error(`The email you entered is not Registered !`, {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
-    }
+    toast.error(err.response.data.errors[0], {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   }
 };
 export { formSubmitHandler };
