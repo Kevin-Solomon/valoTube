@@ -25,7 +25,7 @@ const createNewPlaylist = async (token, playlist, playlistDispatch) => {
     }
   } catch (err) {
     if (err.response.status === 500) {
-      toast.error(`Please Login to use this feature`, {
+      toast.error(`Please Login / Sign Up to use this feature`, {
         position: 'top-right',
         autoClose: true,
         hideProgressBar: false,

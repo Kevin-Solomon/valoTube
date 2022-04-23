@@ -24,7 +24,16 @@ const addToLike = async (token, video, likeDispatch) => {
       return null;
     }
   } catch (err) {
-    console.error(err);
+    if (err.response.status === 500) {
+      toast.error(`Please Login / Sign Up to use this feature`, {
+        position: 'top-right',
+        autoClose: true,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        progress: undefined,
+      });
+    }
   }
 };
 export { addToLike };
