@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../context/auth/authContext';
 import { formSubmitHandler } from '../../../service';
+import { useLocation } from 'react-router-dom';
 import './Login.css';
 
 export const Login = () => {
+  const location = useLocation();
   const { authDispatch } = useAuth();
   const [user, setUser] = useState({ email: '', password: '' });
   const navigate = useNavigate();
@@ -17,7 +19,7 @@ export const Login = () => {
         authDispatch
       );
       if (response === 200) {
-        navigate('/', { replace: true });
+        navigate(`${location?.state?.prevPath || '/'} `, { replace: true });
       }
     } catch (err) {
       console.error(err);
