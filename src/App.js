@@ -11,6 +11,7 @@ import WatchLater from './pages/private/WatchLater/WatchLater';
 import 'react-toastify/dist/ReactToastify.css';
 import Playlist from './pages/private/Playlist/Playlist';
 import SinglePlaylist from './pages/private/SinglePlaylist/SinglePlaylist';
+import RequiresAuth from './components/RequiresAuth/RequiresAuth';
 import { ToastContainer } from 'react-toastify';
 function App() {
   return (
@@ -32,10 +33,38 @@ function App() {
         <Route path="/videos/:videoId" element={<SingleVideo />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/history" element={<History />} />
-        <Route path="/liked" element={<Like />} />
-        <Route path="/watch-later" element={<WatchLater />} />
-        <Route path="/playlist" element={<Playlist />} />
+        <Route
+          path="/history"
+          element={
+            <RequiresAuth>
+              <History />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path="/liked"
+          element={
+            <RequiresAuth>
+              <Like />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path="/watch-later"
+          element={
+            <RequiresAuth>
+              <WatchLater />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path="/playlist"
+          element={
+            <RequiresAuth>
+              <Playlist />
+            </RequiresAuth>
+          }
+        />
         <Route path="/playlist/:playlistId" element={<SinglePlaylist />} />
         <Route path="/mockman" element={<Mockman />} />
       </Routes>
