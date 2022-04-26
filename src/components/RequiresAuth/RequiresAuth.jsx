@@ -7,7 +7,7 @@ function RequiresAuth({ children }) {
   const location = useLocation();
 
   return authState.token === null ? (
-    <Navigate to="/login" state={{ prevPath: location.pathname }} />
+    <Navigate to="/login" state={{ prevPath: location.pathname }} replace />
   ) : (
     children
   );
