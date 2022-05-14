@@ -6,7 +6,6 @@ import './Navbar.css';
 
 function Navbar() {
   const { authState, authDispatch } = useAuth();
-  console.log(authState);
   return (
     <nav className="navbar">
       <div className="logo">

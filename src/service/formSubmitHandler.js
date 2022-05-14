@@ -21,7 +21,6 @@ const formSubmitHandler = async (url, user, authDispatch) => {
         });
         authDispatch({ type: 'LOGIN', payload: response.data });
       } else if (response.status === 201) {
-        console.log(response);
         resolve(response.status);
         toast.success(`Welcome ${response.data.createdUser.name} `, {
           position: 'top-right',

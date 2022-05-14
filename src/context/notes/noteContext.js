@@ -8,7 +8,6 @@ export const NoteProvider = ({ children }) => {
   const { authState } = useAuth();
   const [noteState, noteDispatch] = useReducer(noteReducer, initialNoteState);
   useEffect(() => {
-    console.log('running');
     async function getNotes() {
       const response = await axios({
         method: 'GET',
@@ -16,7 +15,6 @@ export const NoteProvider = ({ children }) => {
         headers: { authorization: authState.token },
       });
       noteDispatch({ type: 'INITIAL', payload: response.data.notes });
-      console.log(response);
     }
     getNotes();
   }, [authState.token]);

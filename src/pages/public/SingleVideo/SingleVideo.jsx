@@ -13,7 +13,6 @@ function SingleVideo() {
   const { videoId } = useParams();
   const [video, setVideo] = useState({ _id: '' });
   const { noteState } = useNote();
-  console.log(noteState);
   useEffect(() => {
     (async () => {
       const response = await getVideo(videoId);

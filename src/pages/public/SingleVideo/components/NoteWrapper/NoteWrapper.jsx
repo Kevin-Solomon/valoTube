@@ -11,7 +11,6 @@ function NoteWrapper({ videoId, timeStamp }) {
   const { authState } = useAuth();
   const { noteState, noteDispatch } = useNote();
   const noteForVideo = noteState.filter(note => note.videoId === videoId);
-  console.log(noteState);
   const [noteDescription, setNoteDescription] = useState('');
   return (
     <div className="note-wrapper">
