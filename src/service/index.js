@@ -16,7 +16,11 @@ import { addToPlaylist } from './addToPlaylist';
 import { deleteFromPlaylist } from './deleteFromPlaylist';
 import { getPlaylistItems } from './getPlaylistItems';
 import { deletePlaylist } from './deletePlaylist';
+import { addNote } from './addNote';
+import { deleteNote } from './deleteNote';
 export {
+  deleteNote,
+  addNote,
   deletePlaylist,
   getPlaylistItems,
   deleteFromPlaylist,

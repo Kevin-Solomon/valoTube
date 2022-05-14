@@ -5,8 +5,7 @@ import { useAuth } from '../../context/auth/authContext';
 import './Navbar.css';
 
 function Navbar() {
-  const { authState } = useAuth();
-  console.log(authState);
+  const { authState, authDispatch } = useAuth();
   return (
     <nav className="navbar">
       <div className="logo">
@@ -18,13 +17,25 @@ function Navbar() {
             <button className="primary-btn btn">Login</button>
           </Link>
         ) : (
-          <div className="profile">
-            <img class="avatar" src={defaultUser} alt="avatar1"></img>
-            <span>
-              {authState?.user?.firstName ||
-                authState?.createdUser?.name ||
-                'Guest'}
-            </span>
+          <div className="profile-logout">
+            <div className="profile">
+              <img class="avatar" src={defaultUser} alt="avatar1"></img>
+              <span>
+                {authState?.user?.firstName ||
+                  authState?.createdUser?.name ||
+                  'Guest'}
+              </span>
+            </div>
+            <Link to="/login">
+              <button
+                onClick={() => {
+                  authDispatch({ type: 'LOGOUT' });
+                }}
+                className="primary-btn btn"
+              >
+                Logout
+              </button>
+            </Link>
           </div>
         )}
       </div>

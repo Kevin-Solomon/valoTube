@@ -6,11 +6,13 @@ import VideoWrapper from './components/VideoWrapper/VideoWrapper';
 import NoteWrapper from './components/NoteWrapper/NoteWrapper';
 import { ToastContainer } from 'react-toastify';
 import './SingleVideo.css';
+import { useNote } from '../../../context/notes/noteContext';
 
 function SingleVideo() {
+  const [timeStamp, setTimeStamp] = useState(0);
   const { videoId } = useParams();
-  const [video, setVideo] = useState({});
-
+  const [video, setVideo] = useState({ _id: '' });
+  const { noteState } = useNote();
   useEffect(() => {
     (async () => {
       const response = await getVideo(videoId);
@@ -34,8 +36,12 @@ function SingleVideo() {
       />
       <Navbar />
       <section className="container-flex">
-        <VideoWrapper video={video} youtubeId={video.youtubeId} />
-        <NoteWrapper />
+        <VideoWrapper
+          setTimeStamp={setTimeStamp}
+          video={video}
+          youtubeId={video.youtubeId}
+        />
+        <NoteWrapper timeStamp={timeStamp} videoId={video._id} />
       </section>
     </>
   );

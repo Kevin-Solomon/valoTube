@@ -2,3 +2,7 @@
   display: flex;
   align-items: center;
 }
+.profile-logout {
+  display: flex;
+  gap: 1rem;
+}
