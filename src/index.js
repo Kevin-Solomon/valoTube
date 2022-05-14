@@ -11,6 +11,7 @@ import { LikeProvider } from './context/likes/likeContext';
 import { WatchLaterProvider } from './context/watchLater/watchLaterContext';
 import { ModalProvider } from './context/modal/modalContext';
 import { PlaylistProvider } from './context/playlist/playlistContext';
+import { NoteProvider } from './context/notes/noteContext';
 // Call make Server
 makeServer();
 
@@ -23,9 +24,11 @@ ReactDOM.render(
             <WatchLaterProvider>
               <PlaylistProvider>
                 <ModalProvider>
-                  <VideoProvider>
-                    <App />
-                  </VideoProvider>
+                  <NoteProvider>
+                    <VideoProvider>
+                      <App />
+                    </VideoProvider>
+                  </NoteProvider>
                 </ModalProvider>
               </PlaylistProvider>
             </WatchLaterProvider>

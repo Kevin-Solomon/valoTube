@@ -5,7 +5,10 @@ import { likeReducer, initialLikeState } from './likeReducer';
 import { watchLaterReducer, initialWatchLaterState } from './watchLaterReducer';
 import { modalReducer, initialModalState } from './modalReducer';
 import { playlistReducer, initialPlaylistState } from './playlistReducer';
+import { noteReducer, initialNoteState } from './noteReducer';
 export {
+  initialNoteState,
+  noteReducer,
   playlistReducer,
   initialPlaylistState,
   modalReducer,

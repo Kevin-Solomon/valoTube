@@ -10,10 +10,12 @@ import {
   MdClear,
   MdDeleteOutline,
   MdWatchLater,
+  MdEdit,
 } from 'react-icons/md';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineLike, AiOutlineDislike, AiFillLike } from 'react-icons/ai';
+import { BiTimeFive } from 'react-icons/bi';
 
 const getIcons = (type, size) => {
   const style = { fontSize: size, cursor: 'pointer' };
@@ -94,6 +96,18 @@ const getIcons = (type, size) => {
       return (
         <span style={style}>
           <MdDeleteOutline />
+        </span>
+      );
+    case 'TIME':
+      return (
+        <span style={style}>
+          <BiTimeFive />
+        </span>
+      );
+    case 'EDIT':
+      return (
+        <span style={style}>
+          <MdEdit />
         </span>
       );
     default:

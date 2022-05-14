@@ -11,7 +11,7 @@ import { addToWatchLater } from '../../../../../service';
 import { deleteFromWatchLater } from '../../../../../service';
 import './VideoWrapper.css';
 
-function VideoWrapper({ youtubeId, video }) {
+function VideoWrapper({ youtubeId, video, setTimeStamp }) {
   const { authState } = useAuth();
   const { likeState, likeDispatch } = useLike();
   const { watchLaterState, watchLaterDispatch } = useWatchLater();
@@ -20,6 +20,7 @@ function VideoWrapper({ youtubeId, video }) {
   return (
     <div className="video-wrapper">
       <ReactPlayer
+        onProgress={res => setTimeStamp(Math.trunc(res.playedSeconds))}
         playing
         width="100%"
         controls
