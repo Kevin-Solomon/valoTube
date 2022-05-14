@@ -1,6 +1,6 @@
 import axios from 'axios';
-
-const addNote = async (token, data, _id, noteDispatch) => {
+import { toast } from 'react-toastify';
+const addNote = async (token, data, _id, noteDispatch, navigate) => {
   console.log(token);
   try {
     const response = await axios({
@@ -13,6 +13,17 @@ const addNote = async (token, data, _id, noteDispatch) => {
     noteDispatch({ type: 'ADD_NOTE', payload: response.data.notes });
   } catch (err) {
     console.log(err.response);
+    if (err.response.status === 500) {
+      toast.error(`Please Login / Sign Up to use this feature`, {
+        position: 'top-right',
+        autoClose: true,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        progress: undefined,
+      });
+      navigate('/login');
+    }
   }
 };
 export { addNote };

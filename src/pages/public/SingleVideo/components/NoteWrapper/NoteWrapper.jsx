@@ -3,9 +3,11 @@ import { useAuth } from '../../../../../context/auth/authContext';
 import { useNote } from '../../../../../context/notes/noteContext';
 import { addNote } from '../../../../../service';
 import { getIcons, getTimeStamp } from '../../../../../util';
+import { useNavigate } from 'react-router-dom';
 import Note from '../Note/Note';
 import './NoteWrapper.css';
 function NoteWrapper({ videoId, timeStamp }) {
+  const navigate = useNavigate();
   const { authState } = useAuth();
   const { noteState, noteDispatch } = useNote();
   const noteForVideo = noteState.filter(note => note.videoId === videoId);
@@ -26,7 +28,8 @@ function NoteWrapper({ videoId, timeStamp }) {
             authState.token,
             { noteDescription, timeStamp },
             videoId,
-            noteDispatch
+            noteDispatch,
+            navigate
           );
         }}
       >
