@@ -31,6 +31,7 @@ function NoteWrapper({ videoId, timeStamp }) {
             noteDispatch,
             navigate
           );
+          setNoteDescription('');
         }}
       >
         Save
@@ -39,17 +40,6 @@ function NoteWrapper({ videoId, timeStamp }) {
         {noteForVideo.map(note => {
           return <Note {...note} />;
         })}
-        {/* <div className="note-container">
-          <div>asdasd</div>
-          <div className="note-time">
-            <span className="time-icon">{getIcons('TIME', '15px')}</span>
-            <span className="text-muted">{getTimeStamp(200)}</span>
-          </div>
-          <div>
-            <span>{getIcons('DELETE', '18px')}</span>
-            <span>{getIcons('EDIT', '18px')}</span>
-          </div>
-        </div> */}
       </div>
     </div>
   );
