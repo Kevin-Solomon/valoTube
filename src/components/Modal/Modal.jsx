@@ -32,39 +32,41 @@ function Modal() {
           </span>
         </p>
 
-        {playlistState.playlist.length === 0
-          ? 'make new playlist please'
-          : playlistState.playlist.map(playlist => {
-              return (
-                <div>
-                  <input
-                    type="checkbox"
-                    checked={checkVideoExists(modalContent.video, playlist)}
-                    onChange={e => {
-                      if (e.target.checked) {
-                        addToPlaylist(
-                          playlist._id,
-                          token,
-                          modalContent.video,
-                          playlistDispatch,
-                          playlist.title
-                        );
-                      } else {
-                        deleteFromPlaylist(
-                          token,
-                          modalContent.video._id,
-                          playlist._id,
-                          playlistDispatch,
-                          playlist.title,
-                          modalContent.video.title
-                        );
-                      }
-                    }}
-                  />{' '}
-                  <span>{playlist.title}</span>
-                </div>
-              );
-            })}
+        {playlistState.playlist.length === 0 ? (
+          <p>make new playlist please</p>
+        ) : (
+          playlistState.playlist.map(playlist => {
+            return (
+              <div>
+                <input
+                  type="checkbox"
+                  checked={checkVideoExists(modalContent.video, playlist)}
+                  onChange={e => {
+                    if (e.target.checked) {
+                      addToPlaylist(
+                        playlist._id,
+                        token,
+                        modalContent.video,
+                        playlistDispatch,
+                        playlist.title
+                      );
+                    } else {
+                      deleteFromPlaylist(
+                        token,
+                        modalContent.video._id,
+                        playlist._id,
+                        playlistDispatch,
+                        playlist.title,
+                        modalContent.video.title
+                      );
+                    }
+                  }}
+                />{' '}
+                <span>{playlist.title}</span>
+              </div>
+            );
+          })
+        )}
         <button
           className="playlist-btn btn primary-btn"
           onClick={() => setDisplayInput(prev => !prev)}
@@ -73,32 +75,41 @@ function Modal() {
         </button>
         {displayInput && (
           <div className="playlist-footer">
-            <label for="title">Title : </label>
-            <input
-              id="title"
-              name="title"
-              value={playlist.title}
-              onChange={e =>
-                setPlaylist(prevState => ({
-                  ...prevState,
-                  [e.target.name]: e.target.value,
-                }))
-              }
-            />
-            <label for="description">Description</label>
-            <input
-              id="description"
-              name="description"
-              value={playlist.description}
-              onChange={e =>
-                setPlaylist(prevState => ({
-                  ...prevState,
-                  [e.target.name]: e.target.value,
-                }))
-              }
-            />
+            <form class="form">
+              <input
+                id="description"
+                type="text"
+                class="form-input small-text"
+                name="title"
+                placeholder="Please enter a Title"
+                value={playlist.title}
+                onChange={e =>
+                  setPlaylist(prevState => ({
+                    ...prevState,
+                    [e.target.name]: e.target.value,
+                  }))
+                }
+              />
+            </form>
+
+            <form class="form">
+              <input
+                id="description"
+                type="text"
+                class="form-input small-text"
+                placeholder="Please enter your description"
+                value={playlist.description}
+                onChange={e =>
+                  setPlaylist(prevState => ({
+                    ...prevState,
+                    [e.target.name]: e.target.value,
+                  }))
+                }
+              />
+            </form>
+
             <button
-              className="primary-btn"
+              className="primary-btn create-btn"
               onClick={() => {
                 createNewPlaylist(token, playlist, playlistDispatch);
                 setPlaylist({ title: '', description: '' });
