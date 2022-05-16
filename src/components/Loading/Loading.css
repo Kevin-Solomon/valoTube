@@ -1,0 +1,34 @@
+.skeletal-video-card {
+  animation: skeletal-loading 1s linear infinite alternate;
+  height: 200px;
+  width: 360px;
+  margin-bottom: 10px;
+}
+.skeletal-thumbnail {
+  animation: skeletal-loading 1s linear infinite;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.skeletal-card-footer {
+  display: flex;
+  gap: 10px;
+}
+.skeletal-text,
+.skeletal-price {
+  margin-top: 5px;
+  width: 200px;
+  height: 1rem;
+  animation: skeletal-loading 1s linear infinite;
+}
+.text-overlay-container {
+  width: 15rem;
+}
+@keyframes skeletal-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
